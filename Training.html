@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Winfo Rabatt-Check</title>
+</head>
+<body>
+    <h2>Shop-Kasse</h2>
+    <p>Warenkorb-Wert (€): <input type="number" id="preisInput" value="0"></p>
+    <button onclick="berechneRabatt()">Preis berechnen</button>
+    
+    <h3 id="ergebnis">Gesamtpreis: 0 €</h3>
+
+    <script>
+    function berechneRabatt() {
+        // 1. Wert aus dem Input-Feld holen
+        let preis = document.getElementById("preisInput").value;
+        let endpreis;
+
+        if (preis > 500) {
+            endpreis = preis * 0.7; // 30% Rabatt
+        // Aufgabe 1 (Wenn der Preis über 500 € liegt, gibt es 30% Rabatt (* 0.7).)
+        } else if (preis > 200 && preis < 500) {
+            endpreis = preis * 0.8; // 20% Rabatt
+        // Aufgabe 2 (Wenn der Preis zwischen 200 € und 500 € liegt, gibt es 20% Rabatt (* 0.8).)
+        } else {
+            endpreis = preis;
+        // Aufgabe 3 (Ansonsten gibt es keinen Rabatt.)
+        }
+
+        // 3. Ergebnis auf der Seite anzeigen
+        document.getElementById("ergebnis").innerText = "Gesamtpreis: " + endpreis + " €";
+    }
+    </script>
+</body>
+</html>
