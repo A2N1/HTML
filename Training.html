@@ -1,6 +1,8 @@
-// Aufgabe 1: Wenn der Preis über 500 € liegt, gibt es 30% Rabatt (* 0.7).
-// Aufgabe 2: Wenn der Preis zwischen 200 € und 500 € liegt, gibt es 20% Rabatt (* 0.8).
-// Aufgabe 3: Ansonsten gibt es keinen Rabatt.
+<!--
+Aufgabe 1: Wenn der Preis über 500 € liegt, gibt es 30% Rabatt (* 0.7).
+Aufgabe 2: Wenn der Preis zwischen 200 € und 500 € liegt, gibt es 20% Rabatt (* 0.8).
+Aufgabe 3: Ansonsten gibt es keinen Rabatt.
+-->
 
 <!DOCTYPE html>
 <html>
@@ -34,6 +36,7 @@
 </body>
 </html>
 
+<!--
 // Tipp: 
 if (preis > 500) {
     // mach was
@@ -44,7 +47,7 @@ if (preis > 500) {
 }
 
 // Lösung: Scrolle nach unten
-
+-->
 
 
 
@@ -104,6 +107,8 @@ if (preis > 500) {
 </body>
 </html>
 
+
+<!--
 // Klassiker in der Informatik: Strings vs. Numbers.
 
 Musterlösung:
@@ -122,3 +127,29 @@ function berechneRabatt() {
 
     document.getElementById("ergebnis").innerText = "Gesamtpreis: " + endpreis.toFixed(2) + " €";
 }
+-->
+
+<!--
+// Zusatzaufgabe
+// Wenn wir jetzt die Sonderregel einbauen: "Wenn der Preis exakt 100 € ist, schreibe: 'Glückwunsch! Du bekommst ein Geschenk!'"
+
+function berechneRabatt() {
+    let preis = Number(document.getElementById("preisInput").value);
+    let endpreis;
+
+    if (preis === 100) {
+        document.getElementById("ergebnis").innerText = "Glückwunsch! Du bekommst ein Geschenk!";
+        return; // Funktion hier beenden
+    }
+
+    if (preis > 500) {
+        endpreis = preis * 0.7;
+    } else if (preis > 200) {
+        endpreis = preis * 0.8;
+    } else {
+        endpreis = preis;
+    }
+
+    document.getElementById("ergebnis").innerText = "Gesamtpreis: " + endpreis.toFixed(2) + " €";
+}
+-->
