@@ -103,3 +103,22 @@ if (preis > 500) {
     </script>
 </body>
 </html>
+
+// Klassiker in der Informatik: Strings vs. Numbers.
+
+Musterlösung:
+function berechneRabatt() {
+    // Wandelt den Text aus dem Input in eine echte Zahl um
+    let preis = Number(document.getElementById("preisInput").value);
+    let endpreis;
+
+    if (preis > 500) {
+        endpreis = preis * 0.7;
+    } else if (preis > 200) {
+        endpreis = preis * 0.8;
+    } else {
+        endpreis = preis;
+    }
+
+    document.getElementById("ergebnis").innerText = "Gesamtpreis: " + endpreis.toFixed(2) + " €";
+}
